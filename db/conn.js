@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect("mongodb+srv://jagmohan:UO7Aqp1bEafm2sT9@cluster0.uqqnml2.mongodb.net/?retryWrites=true&w=majority", {
+let CLUSTER_URL = process.env.CLUSTER_URL;
+
+mongoose.connect(CLUSTER_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
